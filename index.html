@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Practice</title>
+  <meta charset="UTF-8"/>
+</head>
+<body>
+  <script>
+function rand(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+    function computerPlay() {
+      let pick = rand(0, 2);
+
+            switch (pick) {
+                case 0:
+                    return 'Rock';
+                case 1:
+                    return 'Paper';
+                default:
+                    return 'Scissors'
+            }
+    }
+
+
+    function playRound(playerSelection, computerSelection) {
+      
+      if (playerSelection == computerSelection) {
+        alert("It's a tie!");
+                return;
+            }
+
+            if (playerSelection == 'Rock') {
+                if (computerSelection == 'Paper') {
+                  alert("Computer Wins!");
+                  return;
+                    
+                }
+                else {
+                  alert("Player Wins!");
+                  return;
+                }
+            }
+            else if (playerSelection == 'Paper') {
+                if (computerSelection == 'Scissors') {
+                  alert("Computer Wins!");
+                  return;
+                }
+                else {
+                  alert("Player Wins!");
+                  return;
+                }
+            }
+            else {
+                if (computerSelection == 'Rock') {
+                  alert("Computer Wins!");
+                  return;
+                }
+                else {
+                  alert("Player Wins!");
+                  return;
+            }
+
+
+    }
+  }
+    let computerSelection = computerPlay();
+    let playerSelection = window.prompt("Choose between Rock, Paper or Scissors");
+
+    playRound(playerSelection, computerSelection);
+  </script>
+</body>
+</html>
